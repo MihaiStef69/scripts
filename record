@@ -1,0 +1,6 @@
+#!/bin/sh
+
+RES="1920x1080"
+FPS="30"
+
+ffmpeg -f alsa -ac 2 -i plughw:0,0 -async 1 -f x11grab -s "$RES" -i :0.0 -c:a libmp3lame -b:a 384k -c:v libx264 -b:v 4000k -profile:v high444 -r "$FPS" -preset ultrafast
