@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+
+#restore dwm to the previous build
+
+cd ~/.config/dwm
+sudo make uninstall
+cd ..
+sudo rm -r dwm
+cd ~/tmp
+sudo rm -r dotfiles
+git clone https://github.com/MihaiStef69/dotfiles
+cd dotfiles/.config
+mv dwm ~/.config
+cd ~/.config/dwm
+sudo make clean install
