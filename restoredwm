@@ -3,14 +3,14 @@
 
 #restore dwm to the previous build
 
-cd ~/.config/dwm
+cd ~/.config/dwm-1
 sudo make uninstall
 cd ..
-sudo rm -r dwm
-cd ~/tmp
+sudo rm -r dwm-1
+cd ~/.tmp
 sudo rm -r dotfiles
 git clone https://github.com/MihaiStef69/dotfiles
 cd dotfiles/.config
-mv dwm ~/.config
-cd ~/.config/dwm
+mv -r dwm-1 ~/.config
+cd ~/.config/dwm-1
 sudo make clean install
